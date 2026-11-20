@@ -1,6 +1,6 @@
 # 🌐 Social Media Web Application
 
-A responsive social media web application built using HTML, CSS, and Vanilla JavaScript. The application allows users to create accounts, manage posts, interact with other users, and explore content through a dynamic feed.
+A responsive social media web application built using HTML, CSS, and JavaScript. The application allows users to create accounts, manage posts, interact with other users, and explore content through a dynamic feed.
 
 ## 🚀 Overview
 
