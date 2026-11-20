@@ -53,7 +53,7 @@ The application provides user authentication, post management, comments, user pr
 ## 🛠️ Technologies Used
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,vite&perline=4" alt="HTML, CSS, JavaScript and Vite,postman" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,vite,postman" alt="HTML, CSS, JavaScript and Vite" />
 </p>
 
 - **HTML5:** Structuring application pages.
