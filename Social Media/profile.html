@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- IMPORT BOOTSTRAP  -->
+    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <!--// IMPORT BOOTSTRAP  //-->
+    <!-- IMPORT Axios  -->
+    <!-- <script src="./node_modules/axios/dist/axios.min.js"></script> -->
+    <!--// IMPORT Axios  //-->
+  <script type="module" crossorigin src="/assets/profile-s-WR9Jes.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/mainLogic-Dzjr-o7S.js">
+  <link rel="stylesheet" crossorigin href="/assets/mainLogic-CkU6zP0p.css">
+</head>
+<body>
+        <!-- Loader -->
+    <div id="loader" style="background: rgba(128, 128, 128, 0.592);position: fixed;left:0;right: 0;top: 0;bottom: 0;margin: auto auto;display: flex;justify-content: center;align-items: center;z-index: 9999;width: 100px;height: 100px; border-radius: 20px;">
+        <div class="lds-ring" bis_skin_checked="1"><div bis_skin_checked="1"></div><div bis_skin_checked="1"></div><div bis_skin_checked="1"></div><div bis_skin_checked="1"></div></div>
+    </div>
+    <!--// Loader //-->
+    
+    <!-- ========== Modals ========== -->
+    
+    <!-- ========== Alert Modals ========== -->
+    
+    <!-- loginToast -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="loginToast" class="toast align-items-center  bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+        <div class="d-flex">
+            <div class="toast-body fs-6 fw-bold text-light">
+                ✅ Login Successed
+            </div>
+            <button type="text" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <!--// loginToast //-->
+
+    <!-- logoutToast -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3 show fade">
+    <div id="logoutToast" class="toast align-items-center bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+        <div class="d-flex">
+            <div class="toast-body fs-6 fw-bold text-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16" style="margin-right: 10px;">
+                    <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
+                </svg> Logout Successed
+            </div>
+            <button type="text" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <!--// logoutToast //-->
+
+    <!-- registerToast -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="registerToast" class="toast align-items-center  bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+        <div class="d-flex">
+            <div class="toast-body fs-6 fw-bold text-light">
+                🔑 Register Successed
+            </div>
+            <button type="text" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <!--// registerToast //-->
+
+        <!-- PostToast -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="postToast" class="toast align-items-center  bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+        <div class="d-flex">
+            <div class="toast-body fs-6 fw-bold text-light">
+                ✅ Post Has Been Created
+            </div>
+            <button type="text" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <!--// PostToast //-->
+
+    <!-- registerErrorToast -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="registerErrorToast" class="toast align-items-center  bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+        <div class="d-flex">
+            <div id="registerErrorToastMessage" class="toast-body fs-6 fw-bold text-light">
+            </div>
+            <button type="text" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <!--// registerErrorToast //-->
+
+    <!-- postErrorToastMessage -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="postErrorToast" class="toast align-items-center  bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+        <div class="d-flex">
+            <div id="postErrorToastMessage" class="toast-body fs-6 fw-bold text-light">
+            </div>
+            <button type="text" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <!--// postErrorToastMessage //-->
+
+        <!-- Delete Post Toast -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="DeletePostToast" class="toast align-items-center  bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+        <div class="d-flex">
+            <div class="toast-body fs-6 fw-bold text-light">
+                ✅ Post Deleted Successfully
+            </div>
+            <button type="text" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <!--// Delete Post Toast //-->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header bg-dark text-light">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                <!-- <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="username-input" class="col-form-label">UserName:</label>
+                    <input type="text" class="form-control" id="username-input">
+                </div>
+                <div class="mb-3">
+                    <label for="password-input" class="col-form-label">Password:</label>
+                    <input type="password" class="form-control" id="password-input">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="login-btn" class="btn btn-dark" onclick="LoginBtnClicked()">login</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--// Login Modal //-->
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header bg-dark text-light">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Register A New User</h1>
+                <!-- <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="register-name-input" class="col-form-label fw-bold">Name</label>
+                    <input type="text" class="form-control" id="register-name-input" >
+                </div>
+                <div class="mb-3">
+                    <label for="register-username-input" class="col-form-label fw-bold">UserName</label>
+                    <input type="text" class="form-control" id="register-username-input" >
+                </div>
+                <div class="mb-3">
+                    <label for="register-email-input" class="col-form-label fw-bold">Email</label>
+                    <input type="email" class="form-control" id="register-email-input" placeholder="Fake@gmail.com">
+                </div>
+                <div class="mb-3">
+                    <label for="register-password-input" class="col-form-label fw-bold">Password</label>
+                    <input type="password" class="form-control" id="register-password-input">
+                </div>
+                <div class="mb-3">
+                    <label for="register-pic-input" class="col-form-label fw-bold">Picture</label>
+                    <input type="file" class="form-control" id="register-pic-input"  accept="image/*">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="Register-btn" class="btn btn-dark" onclick="registerBtnClicked()">Register</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--// Register Modal //-->
+
+    <!-- Create Post Modal -->
+    <div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header bg-dark text-light">
+                <h1 class="modal-title fs-5" id="post-modal-title">New Post</h1>
+                <!-- <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="post-title-input" class="col-form-label fw-bold">Title</label>
+                    <input type="text" class="form-control" id="post-title-input" value="">
+                    <input type="hidden" id="post-id-input" value="">
+                </div>
+                <div class="mb-3">
+                    <textarea name="" id="post-body-input" class="" style="width: 100%;height: 100px;border-color:gainsboro;border-radius: 5px;resize: none;padding: 10px;">
+                    </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="post-image-input" class="col-form-label fw-bold">Image</label>
+                    <input type="file" class="form-control" id="post-image-input" accept="image/*">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="post-modal-submit-btn" class="btn btn-dark" onclick="createNewPostClicked()">Create</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--// Create Post Modal //-->
+
+    <!-- Delete Post Modal -->
+    <div class="modal fade" id="delete-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header bg-dark text-light">
+                <h1 class="modal-title fs-5" id="post-modal-title">Delete Post
+                    <span id="delete-post-title"></span>
+                </h1>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                <input type="hidden" id="delete-post-id-input" value="">
+            </div>
+            <div class="modal-body">
+                <label for="" class="col-form-label fw-bold">Are You Sure You Want To Delete This Post?</label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="post-modal-submit-btn" class="btn btn-danger" onclick="confirmPostDelete()">Delete</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--// Delete Post Modal //-->
+
+    <!--// ========== Modals ========== //-->
+
+        <!-- Add Post Button -->
+    <div id="add-post-div" class="bg-dark" onclick="addBtnClicked()">
+        <svg id="add-post-btn" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-square-fill bg-light" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+        </svg>
+    </div>
+    <!--// Add Post Button //-->
+
+
+
+    <!-- Navigation Bar -->
+    <div>
+        <div class="d-flex justify-content-center">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow rounded-bottom pt-2">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.html">Social</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link" onclick="profileClicked()" style="cursor: pointer;">Profile</a>
+                            </div>
+                            <!-- For Non-Logged In User -->
+                            <div class="d-flex w-100 justify-content-end" id="login-nav-div">
+                                <button type="button" id="login-nav-btn" data-bs-toggle="modal" data-bs-target="#login-modal" class="btn btn-outline-light">Login</button>
+                                <button type="button" id="register-nav-btn" data-bs-toggle="modal" data-bs-target="#register-modal" class="btn btn-outline-light mx-3">Register</button>
+                            </div>
+                            <!--// For Non-Logged In User //-->
+                            <!-- For Logged In User -->
+                            <div class="d-flex w-100 justify-content-end" id="logout-nav-div">
+                                <button type="button" id="logout-nav-btn"  data-bs-toggle="modal" class="btn btn-outline-light" onclick="LogoutUI()">Logout</button>
+                                <b class="text-light mt-1 fs-5 mx-2" id="nav-username"></b>
+                                <img id="profile-nav-pic" class="rounded-circle border border-2 mx-2" src="" alt="" style="width: 40px;height: 40px;border-color: #89ffbf  !important;" >
+                            </div>
+                            <!--// For Logged In User //-->
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--// Navigation Bar //-->
+
+    <!-- Main Content -->
+    <div class="container" >
+        <div class="d-flex justify-content-center mt-3">
+            <div class="col-8">
+                <!-- Main Info -->
+                <div class="card shadow">
+                    <div class="card-body mx-1" style="cursor: pointer;">
+                        <div class="row">
+                            <!-- User Image -->
+                            <div class="col-2">
+                                <img id="header-image" src="/assets/male-CmsTFqMX.jpeg" alt="" width="150px" height="150px" class="rounded-circle border border-2" style="border-color: #959494  !important;">
+                            </div>
+                            <!--// User Image //-->
+                            <!-- UserName - Email - Name -->
+                            <div id="main-info" class="col-4 d-flex flex-column align-items-center justify-content-evenly text-dark fw-bold fs-6">
+                                <div class="user-main-info" id="main-info-email">
+                                    
+                                </div>
+                                <div class="user-main-info" id="main-info-name">
+                                    
+                                </div>
+                                <div class="user-main-info" id="main-info-username">
+                                    
+                                </div>
+                            </div>
+                            <!--// UserName - Email - Name //-->
+                            <!-- Posts & Comments Count -->
+                            <div class="col-6">
+                                <div class="number-info" >
+                                    <span class="text-dark" id="posts-count"></span>Posts
+                                </div>
+                                <div class="number-info" >
+                                    <span class="text-dark" id="comments-count"></span>Comments
+                                </div>
+                            </div>
+                            <!--// Posts & Comments Count //-->
+                        </div>
+                    </div>
+                </div>
+                <!--// Main Info //-->
+                <!-- Posts Title -->
+                <div class="row mt-5">
+                    <h1 id="name-posts">User's Posts</h1>
+                </div>
+                <!--// Posts Title //-->
+                <!-- Posts -->
+                <div class="row" id="user-posts">
+                    <!-- Post -->
+                    <!-- <div class="card shadow">
+                        <div class="card-header d-flex align-items-start">
+                            <img class="rounded-circle border border-2" src="${CheckIfNoProfilePic(post.author.profile_image)}" alt="" style="width: 40px;height: 40px;" >
+                            <div class="mx-2">
+                                <h4 class="d-inline mb-1 fw-semibold">${post.author.username}</h4>
+                                <div class="text-secondary mx-1" style="font-size: 10px;">${post.created_at}</div>
+                                ${editBtnContent}
+                            </div>
+                        </div>
+                        <div class="card-body mx-1" onclick="postClicked(${post.id})" style="cursor: pointer;">
+                            <img class="w-100 rounded" src="${CheckIfNoPostImage(post.image)}" alt="" >
+                            <h5 class="mt-2">${CheckIfValueIsNull(post.title)}</h5>
+                            <p>
+                                ${post.body}
+                            </p>
+                            <hr>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                                </svg>
+                                <span>
+                                    (${post.comments_count}) Comments
+                                    <span id="post-tags-${post.id}" class="mx-2">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!--// Post //-->
+                </div>
+                <!--// Posts //-->
+            </div>
+        </div>
+    </div>
+    <!--// Main Content //-->
+
+</body>
+</html>
