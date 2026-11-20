@@ -81,6 +81,24 @@ The backend and API were provided by the course instructor.
 
 My contribution focused on developing the frontend application, implementing its functionality, handling API requests, and integrating the user interface with the provided backend services.
 
+---
+
+## 📸 Screenshots
+
+### Login Page
+![Login Page](screenshots/login-page.png)
+
+### Home Feed
+![Home Feed](screenshots/home-page.png)
+
+### User Profile
+![User Profile](screenshots/user-profile.png)
+
+### Create Post
+![Create Post](screenshots/create-post.png)
+
+---
+
 ## ⚙️ Getting Started
 
 ### Prerequisites
