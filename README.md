@@ -53,7 +53,7 @@ The application provides user authentication, post management, comments, user pr
 ## 🛠️ Technologies Used
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,vite,postman" alt="HTML, CSS, JavaScript and Vite" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,vite,postman" alt="HTML, CSS, JavaScript and Vite,postman" />
 </p>
 
 - **HTML5:** Structuring application pages.
@@ -61,6 +61,13 @@ The application provides user authentication, post management, comments, user pr
 - **JavaScript (Vanilla JS):** Implementing application functionality and dynamic interactions.
 - **Vite:** Development server and build tool.
 - **Axios:** Handling HTTP requests and communicating with the backend API.
+
+### 🧪 API Testing with Postman
+
+- Used Postman to explore and test the backend API endpoints provided by the course instructor.
+- Worked with a pre-configured Postman collection containing organized requests for different operations, including user registration, login, adding posts, and deleting posts.
+- Inspected API endpoints, request methods, and responses to understand how the backend services work.
+- Used the tested API endpoints as a reference when integrating the frontend application with the backend using Axios.
 
 ## 🔗 API Integration
 
